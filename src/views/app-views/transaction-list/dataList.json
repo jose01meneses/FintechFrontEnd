@@ -1,0 +1,38 @@
+[
+	{
+        "id": 12,
+        "desc": "Venta Mouse Logitech",
+        "date": "17/03/2021",
+        "price": 77,
+        "origin": "Trabajo informal",
+        "destiny": "Cuenta BCR 4578",
+        "currency": "Cada dos semanas"
+    },
+    {
+        "id": 13,
+        "desc": "Venta Mouse Logitech",
+        "date": "17/03/2021",
+        "price": 77,
+        "origin": "Trabajo informal",
+        "destiny": "Cuenta BCR 4578",
+        "currency": "Cada dos semanas"
+    },
+    {
+        "id": 14,
+        "desc": "Venta Mouse Logitech",
+        "date": "17/03/2021",
+        "price": 77,
+        "origin": "Trabajo informal",
+        "destiny": "Cuenta BCR 4578",
+        "currency": "Cada dos semanas"
+    },
+    {
+        "id": 15,
+        "desc": "Venta Mouse Logitech",
+        "date": "17/03/2021",
+        "price": 77,
+        "origin": "Trabajo informal",
+        "destiny": "Cuenta BCR 4578",
+        "currency": "Cada dos semanas"
+    }
+]

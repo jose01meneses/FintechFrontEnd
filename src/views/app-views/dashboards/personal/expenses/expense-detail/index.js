@@ -1,15 +1,13 @@
 import React, {useState} from 'react'
-import { Card, Table, Select, Input, Button, Menu } from 'antd';
-import ProductListData from "assets/data/product-list.data.json"
+import { Card, Table, Input, Button, Menu } from 'antd';
+import ProductListData from "./dataList.json"
 import { EyeOutlined, DeleteOutlined, SearchOutlined, PlusCircleOutlined } from '@ant-design/icons';
-import AvatarStatus from 'components/shared-components/AvatarStatus';
 import EllipsisDropdown from 'components/shared-components/EllipsisDropdown';
 import Flex from 'components/shared-components/Flex'
 import NumberFormat from 'react-number-format';
 import { useHistory } from "react-router-dom";
-import utils from 'utils'
-
-const { Option } = Select
+import utils from 'utils';
+import TittleList from "./tittleList.json";
 
 /*const getStockStatus = stockCount => {
 	if(stockCount >= 10) {
@@ -24,10 +22,9 @@ const { Option } = Select
 	return null
 }*/
 
-const categories = ['Cloths', 'Bags', 'Shoes', 'Watches', 'Devices']
-
-const ExpenseDetail = () => {
+const ExpenseDetail = (props) => {
 	let history = useHistory();
+	const tittleListConst = TittleList.filter(element => element.id === props.viewType)[0];
 	const [list, setList] = useState(ProductListData)
 	const [selectedRows, setSelectedRows] = useState([])
 	const [selectedRowKeys, setSelectedRowKeys] = useState([])
@@ -37,20 +34,20 @@ const ExpenseDetail = () => {
 			<Menu.Item onClick={() => viewDetails(row)}>
 				<Flex alignItems="center">
 					<EyeOutlined />
-					<span className="ml-2">View Details</span>
+					<span className="ml-2">Modificar</span>
 				</Flex>
 			</Menu.Item>
 			<Menu.Item onClick={() => deleteRow(row)}>
 				<Flex alignItems="center">
 					<DeleteOutlined />
-					<span className="ml-2">{selectedRows.length > 0 ? `Delete (${selectedRows.length})` : 'Delete'}</span>
+					<span className="ml-2">{selectedRows.length > 0 ? `Eliminar (${selectedRows.length})` : 'Eliminar'}</span>
 				</Flex>
 			</Menu.Item>
 		</Menu>
 	);
 	
-	const addProduct = () => {
-		history.push(`/app/apps/ecommerce/add-product`)
+	const addTransaction = () => {
+		history.push(`/app/dashboards/personal/expense/add-expense`)
 	}
 	
 	const viewDetails = row => {
@@ -72,7 +69,74 @@ const ExpenseDetail = () => {
 		}
 	}
 
-	const tableColumns = [
+	const setTableColumns = (tittleItems) => {
+		if (tittleItems.id === "RevPersonal" || 
+			tittleItems.id == "ExpenPersonal" || 
+			tittleItems.id === "RevPS" ||
+			tittleItems.id === "COGS" || 
+			tittleItems.id === "SGA" ||
+			tittleItems.id === "Capex" ||
+			tittleItems.id === "CXC" ||
+			tittleItems.id === "CXP") {
+			return [
+				{
+					title: 'ID',
+					dataIndex: 'id'
+				},
+				{
+					title: tittleItems.column1,
+					dataIndex: 'desc',
+					sorter: (a, b) => utils.antdTableSorter(a, b, 'desc')
+				},
+				{
+					title: tittleItems.column2,
+					dataIndex: 'date',
+					sorter: (a, b) => utils.antdTableSorter(a, b, 'date')
+				},
+				{
+					title: tittleItems.column3,
+					dataIndex: 'price',
+					render: price => (
+						<div>
+							<NumberFormat
+								displayType={'text'} 
+								value={(Math.round(price * 100) / 100).toFixed(2)} 
+								prefix={'$'} 
+								thousandSeparator={true} 
+							/>
+						</div>
+					),
+					sorter: (a, b) => utils.antdTableSorter(a, b, 'price')
+				},
+				{
+					title: tittleItems.column4,
+					dataIndex: 'origin',
+					sorter: (a, b) => utils.antdTableSorter(a, b, 'origin')
+				},
+				{
+					title: tittleItems.column5,
+					dataIndex: 'destiny',
+					sorter: (a, b) => utils.antdTableSorter(a, b, 'destiny')
+				},
+				{
+					title: tittleItems.column6,
+					dataIndex: 'currency',
+					sorter: (a, b) => utils.antdTableSorter(a, b, 'currency')
+				},
+				{
+					title: '',
+					dataIndex: 'actions',
+					render: (_, elm) => (
+						<div className="text-right">
+							<EllipsisDropdown menu={dropdownMenu(elm)}/>
+						</div>
+					)
+				}
+			]
+		}
+	}
+
+	const tableColumns = (progress) => [
 		{
 			title: 'ID',
 			dataIndex: 'id'
@@ -80,11 +144,6 @@ const ExpenseDetail = () => {
 		{
 			title: 'Ingreso',
 			dataIndex: 'name',
-			render: (_, record) => (
-				<div className="d-flex">
-					<AvatarStatus size={60} type="square" src={record.image} name={record.name}/>
-				</div>
-			),
 			sorter: (a, b) => utils.antdTableSorter(a, b, 'name')
 		},
 		{
@@ -115,9 +174,6 @@ const ExpenseDetail = () => {
 		{
 			title: 'Destino',
 			dataIndex: 'destiny',
-			/*render: stock => (
-				<Flex alignItems="center">{getStockStatus(stock)}</Flex>
-			),*/
 			sorter: (a, b) => utils.antdTableSorter(a, b, 'stock')
 		},
 		{
@@ -146,16 +202,6 @@ const ExpenseDetail = () => {
 		setSelectedRowKeys([])
 	}
 
-	const handleShowCategory = value => {
-		if(value !== 'All') {
-			const key = 'category'
-			const data = utils.filterArray(ProductListData, key, value)
-			setList(data)
-		} else {
-			setList(ProductListData)
-		}
-	}
-
 	return (
 		<Card>
 			<Flex alignItems="center" justifyContent="between" mobileFlex={false}>
@@ -164,31 +210,17 @@ const ExpenseDetail = () => {
 						<Input placeholder="Search" prefix={<SearchOutlined />} onChange={e => onSearch(e)}/>
 					</div>
 					<div className="mb-3">
-						<Select 
-							defaultValue="All" 
-							className="w-100" 
-							style={{ minWidth: 180 }} 
-							onChange={handleShowCategory} 
-							placeholder="Category"
-						>
-							<Option value="All">All</Option>
-							{
-								categories.map(elm => (
-									<Option key={elm} value={elm}>{elm}</Option>
-								))
-							}
-						</Select>
+						
 					</div>
 				</Flex>
 				<div>
-					<Button onClick={addProduct} type="primary" icon={<PlusCircleOutlined />} block>Añadir Egreso</Button>
+					<Button onClick={addTransaction} type="primary" icon={<PlusCircleOutlined />} block>Añadir Egreso</Button>
 				</div>
 			</Flex>
 			<div className="table-responsive">
 				<Table 
-					columns={tableColumns} 
+					columns={setTableColumns(tittleListConst)} 
 					dataSource={list} 
-					rowKey='id' 
 					rowSelection={{
 						selectedRowKeys: selectedRowKeys,
 						type: 'checkbox',

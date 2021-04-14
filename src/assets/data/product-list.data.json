@@ -2,7 +2,7 @@
 	{
         "id": 12,
         "name": "Venta Mouse Logitech",
-        "image": "",
+        
         "category": "17/03/2021",
         "price": 77,
         "stock": "Trabajo informal",
@@ -11,7 +11,7 @@
     {
         "id": 13,
         "name": "Configuración computadora Alicia",
-        "image": "",
+        
         "category": "18/03/2021",
         "price": 139,
         "stock": "Trabajo informal",
@@ -20,7 +20,7 @@
     {
         "id": 14,
         "name": "Reparación computadora Luis Fernando",
-        "image": "",
+        
         "category": "19/03/2021",
         "price": 99,
         "stock": "Trabajo informal",
@@ -29,7 +29,7 @@
     {
         "id": 15,
         "name": "Venta de licencia Windows Fabian Diaz",
-        "image": "",
+        
         "category": "20/03/2021",
         "price": 68,
         "stock": "Trabajo informal",

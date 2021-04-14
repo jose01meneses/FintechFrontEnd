@@ -5,7 +5,6 @@ import { Button, Form, Input, Alert } from "antd";
 import { showAuthMessage, showLoading, hideAuthMessage, authenticated } from 'redux/actions/Auth';
 import { useHistory } from "react-router-dom";
 import { motion } from "framer-motion"
-import JwtAuthService from 'services/JwtAuthService'
 
 const rules = {
 	email: [
@@ -47,7 +46,7 @@ export const RegisterForm = (props) => {
 	let history = useHistory();
 
 	const onSignUp = () => {
-    	form.validateFields().then(values => {
+    	/*form.validateFields().then(values => {
 			showLoading()
 			const fakeToken = 'fakeToken'
 			JwtAuthService.signUp(values).then(resp => {
@@ -57,7 +56,9 @@ export const RegisterForm = (props) => {
 			})
 		}).catch(info => {
 			console.log('Validate Failed:', info);
-		});
+		});*/
+
+		document.getElementById('terms-form').hidden = true;
 	}
 
 	useEffect(() => {
@@ -83,8 +84,26 @@ export const RegisterForm = (props) => {
 			</motion.div>
 			<Form form={form} layout="vertical" name="register-form" onFinish={onSignUp}>
 				<Form.Item 
+					name="name" 
+					label="Nombre" 
+				>
+					<Input className="text-primary"/>
+				</Form.Item>
+				<Form.Item 
+					name="lastname" 
+					label="Primer Apellido" 
+				>
+					<Input className="text-primary"/>
+				</Form.Item>
+				<Form.Item 
+					name="secondlastname" 
+					label="Segundo Apellido" 
+				>
+					<Input className="text-primary"/>
+				</Form.Item>
+				<Form.Item 
 					name="email" 
-					label="Email" 
+					label="Correo electrónico" 
 					rules={rules.email}
 					hasFeedback
 				>
@@ -92,7 +111,7 @@ export const RegisterForm = (props) => {
 				</Form.Item>
 				<Form.Item 
 					name="password" 
-					label="Password" 
+					label="Contraseña" 
 					rules={rules.password}
 					hasFeedback
 				>
@@ -100,7 +119,7 @@ export const RegisterForm = (props) => {
 				</Form.Item>
 				<Form.Item 
 					name="confirm" 
-					label="ConfirmPassword" 
+					label="Confirmar contraseña" 
 					rules={rules.confirm}
 					hasFeedback
 				>
@@ -108,10 +127,26 @@ export const RegisterForm = (props) => {
 				</Form.Item>
 				<Form.Item>
 					<Button type="primary" htmlType="submit" block loading={loading}>
-						Sign Up
+						Registrarse
 					</Button>
 				</Form.Item>
 			</Form>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<Form form={form} layout="vertical" id="terms-form">
+				<h3>Aceptación de términos y condiciones</h3>
+				<p>Es requisito necesario para la adquisición de los productos que se ofrecen en este sitio, que lea y acepte los siguientes Términos y Condiciones que a continuación se redactan. El uso de nuestros servicios así como la compra de nuestros productos implicará que usted ha leído y aceptado los Términos y Condiciones de Uso en el presente documento. Todas los productos  que son ofrecidos por nuestro sitio web pudieran ser creadas, cobradas, enviadas o presentadas por una página web tercera y en tal caso estarían sujetas a sus propios Términos y Condiciones. En algunos casos, para adquirir un producto, será necesario el registro por parte del usuario, con ingreso de datos personales fidedignos y definición de una contraseña.</p>
+				<Form.Item>
+					<Button type="primary" htmlType="submit" block loading={loading}>
+						Aceptar
+					</Button>
+				</Form.Item>
+			</Form>
+
 		</>
 	)
 }

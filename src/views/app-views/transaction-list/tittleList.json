@@ -1,0 +1,117 @@
+[
+    {
+        "id": "RevPersonal",
+        "pageName": "Detalle de ingresos del mes",
+        "tittleBtnAdd": "Añadir Ingreso", 
+        "link": "/app/dashboards/personal/revenue/add-revenue",
+        "linkEdit": "/app/dashboards/personal/revenue/edit-revenue",
+        "column1": "Descripción",
+        "column2": "Fecha",
+        "column3": "Monto",
+        "column4": "Origen",
+        "column5": "Destino",
+        "column6": "Frecuencia"
+    },
+    {
+        "id": "ExpenPersonal",
+        "pageName": "Detalle de engresos del mes",
+        "tittleBtnAdd": "Añadir Egreso", 
+        "link": "/app/dashboards/personal/expense/add-expense",
+        "linkEdit": "/app/dashboards/personal/revenue/edit-revenue",
+        "column1": "Descripción",
+        "column2": "Fecha",
+        "column3": "Monto",
+        "column4": "Categoría",
+        "column5": "Fuente",
+        "column6": "Frecuencia"
+    },
+    {
+        "id": "RevPS",
+        "pageName": "Detalle de ingresos del mes",
+        "tittleBtnAdd": "Añadir Ingreso", 
+        "link": "/app/dashboards/professional-services/revenue/add-revenue",
+        "linkEdit": "/app/dashboards/personal/revenue/edit-revenue",
+        "column1": "Descripción",
+        "column2": "Fecha",
+        "column3": "Monto",
+        "column4": "Categoría",
+        "column5": "Fuente",
+        "column6": "Frecuencia"
+    },
+    {
+        "id": "COGSPS",
+        "pageName": "Detalle de COGS del mes",
+        "tittleBtnAdd": "Añadir COGS",
+        "link": "/app/dashboards/professional-services/cogs/add-cogs",
+        "linkEdit": "/app/dashboards/personal/revenue/edit-revenue",
+        "column1": "Descripción",
+        "column2": "Fecha",
+        "column3": "Monto",
+        "column4": "Proveedor",
+        "column5": "Pago de IVA",
+        "column6": "Num. Factura"
+    },
+    {
+        "id": "SGAPS",
+        "pageName": "Detalle de SG&A del mes",
+        "tittleBtnAdd": "Añadir SG&A", 
+        "link": "/app/dashboards/professional-services/sga/add-sga",
+        "linkEdit": "/app/dashboards/personal/revenue/edit-revenue",
+        "column1": "Descripción",
+        "column2": "Fecha",
+        "column3": "Monto",
+        "column4": "Proveedor",
+        "column5": "Pago de IVA",
+        "column6": "Num. Factura"
+    },
+    {
+        "id": "capitalPS",
+        "pageName": "Detalle de Capex del mes",
+        "tittleBtnAdd": "Añadir Capex", 
+        "link": "/app/dashboards/professional-services/capitalexpenses/add-capitalexpenses",
+        "linkEdit": "/app/dashboards/personal/revenue/edit-revenue",
+        "column1": "Descripción",
+        "column2": "Fecha",
+        "column3": "Monto",
+        "column4": "Proveedor",
+        "column5": "Pago de IVA",
+        "column6": "Num. Factura"
+    },
+    {
+        "id": "CXCPS",
+        "pageName": "Detalle de Engresos del mes",
+        "tittleBtnAdd": "Añadir CXC", 
+        "link": "/app/dashboards/professional-services/cxc/add-cxc",
+        "linkEdit": "/app/dashboards/personal/revenue/edit-revenue",
+        "column1": "Descripción",
+        "column2": "Monto",
+        "column3": "Fecha de registro",
+        "column4": "Fecha de cobro",
+        "column5": "Estado",
+        "column6": "Cliente"
+    },
+    {
+        "id": "CXPPS",
+        "pageName": "Detalle de Engresos del mes",
+        "tittleBtnAdd": "Añadir CXP", 
+        "link": "/app/dashboards/professional-services/cxp/add-cxp",
+        "linkEdit": "/app/dashboards/personal/revenue/edit-revenue",
+        "column1": "Descripción",
+        "column2": "Monto",
+        "column3": "Fecha de registro",
+        "column4": "Fecha de pago",
+        "column5": "Estado",
+        "column6": "Cliente"
+    },
+    {
+        "id": "PayrollPS",
+        "pageName": "Detalle de Engresos del mes",
+        "tittleBtnAdd": "Añadir Planilla", 
+        "link": "/app/dashboards/professional-services/payroll/add-payroll",
+        "linkEdit": "/app/dashboards/personal/revenue/edit-revenue",
+        "column1": "Colaborador",
+        "column2": "Fecha",
+        "column3": "Monto"
+    }
+    
+]

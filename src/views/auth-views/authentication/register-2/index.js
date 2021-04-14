@@ -20,8 +20,8 @@ const RegisterTwo = props => {
 					<div className="container d-flex flex-column justify-content-center h-100">
 						<Row justify="center">
 							<Col xs={24} sm={24} md={20} lg={12} xl={8}>
-								<h1>Sign Up</h1>
-								<p>Already have an account? <a href="/auth/login-2">Sign In</a></p>
+								<h1>Formulario de registro</h1>
+								{/*<p>Already have an account? <a href="/auth/login-2">Sign In</a></p>*/}
 								<div className="mt-4">
 									<RegisterForm {...props} />
 								</div>
@@ -37,8 +37,8 @@ const RegisterTwo = props => {
 						<Row justify="center">
 							<Col xs={0} sm={0} md={0} lg={20}>
 								<img className="img-fluid mb-5" src="/img/others/img-19.png" alt=""/>
-								<h1 className="text-white">Welcome to emilus</h1>
-								<p className="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper nisl erat, vel convallis elit fermentum pellentesque.</p>
+								<h1 className="text-white">Bienvenido a Fintech</h1>
+								<p className="text-white">Fintech es un sistema financiero para la gestión de aspectos económicos de personas física y aquellas dadoras de servicios profesionales costarricenses, por lo que también se incluye módulos que ayudan en el cálculo de impuestos ante el Ministerio de Hacienda, así como en la contribución ante la Caja Costarricense del Seguro Social.</p>
 							</Col>
 						</Row>
 						<div className="d-flex justify-content-end pb-4">

@@ -1,0 +1,9 @@
+[
+    {
+        "monto": 500000,
+        "fecha": "15/04/2021",
+        "origen": "Salario",
+        "destino": "Cuenta 5567",
+        "descripcion": "Este es el salario del mes de Abril"
+    }
+]

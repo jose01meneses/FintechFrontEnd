@@ -1,0 +1,5 @@
+[
+  { "id": 1, "name": "Efectivo" },
+  { "id": 2, "name": "Targeta" },
+  { "id": 3, "name": "En linea" }
+]

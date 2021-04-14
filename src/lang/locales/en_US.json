@@ -31,8 +31,13 @@
 	"sidenav.dashboard.business.capitalexpenses": "Gastos al Capital",
 	"sidenav.dashboard.business.taxation": "Alineacion Tributaria y Cargas Sociales",
 
+	"sidenav.dashboard.blog": "Blog",
 
-
+	"sidenav.dashboard.settings": "Configuraciones",
+	"sidenav.dashboard.settings.editprofile": "Editar Perfil",
+	"sidenav.dashboard.settings.changemail":"Cambiar Correo",
+	"sidenav.dashboard.settings.changepassword":"Cambiar Contraseña",
+	"sidenav.dashboard.settings.categories":"Categorias",
 	
 	"sidenav.apps": "Apps",
 	"sidenav.apps.mail": "Mail",
@@ -152,5 +157,11 @@
 
 	"sidenav.docs": "Docs",
 	"sidenav.docs.documentation": "Documentation",
-	"sidenav.docs.changelog": "Changelog"
+	"sidenav.docs.changelog": "Changelog",
+
+
+	
+	"profesional.services.input.number": "El monto no puede ser igual a cero"
+
+
 }

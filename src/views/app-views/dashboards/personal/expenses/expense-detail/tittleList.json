@@ -1,0 +1,90 @@
+[
+    {
+        "id": "RevPersonal",
+        "pageName": "Detalle de ingresos del mes",
+        "column1": "Descripción",
+        "column2": "Fecha",
+        "column3": "Monto",
+        "column4": "Origen",
+        "column5": "Destino",
+        "column6": "Frecuencia"
+    },
+    {
+        "id": "ExpenPersonal",
+        "pageName": "Detalle de engresos del mes",
+        "column1": "Descripción",
+        "column2": "Fecha",
+        "column3": "Monto",
+        "column4": "Categoría",
+        "column5": "Fuente",
+        "column6": "Frecuencia"
+    },
+    {
+        "id": "RevPS",
+        "pageName": "Detalle de ingresos del mes",
+        "column1": "Descripción",
+        "column2": "Fecha",
+        "column3": "Monto",
+        "column4": "Categoría",
+        "column5": "Fuente",
+        "column6": "Frecuencia"
+    },
+    {
+        "id": "COGS",
+        "pageName": "Detalle de COGS del mes",
+        "column1": "Descripción",
+        "column2": "Fecha",
+        "column3": "Monto",
+        "column4": "Proveedor",
+        "column5": "Pago de IVA",
+        "column6": "Num. Factura"
+    },
+    {
+        "id": "SGA",
+        "pageName": "Detalle de SG&A del mes",
+        "column1": "Descripción",
+        "column2": "Fecha",
+        "column3": "Monto",
+        "column4": "Proveedor",
+        "column5": "Pago de IVA",
+        "column6": "Num. Factura"
+    },
+    {
+        "id": "Capex",
+        "pageName": "Detalle de Capex del mes",
+        "column1": "Descripción",
+        "column2": "Fecha",
+        "column3": "Monto",
+        "column4": "Proveedor",
+        "column5": "Pago de IVA",
+        "column6": "Num. Factura"
+    },
+    {
+        "id": "CXC",
+        "pageName": "Detalle de Engresos del mes",
+        "column1": "Descripción",
+        "column2": "Monto",
+        "column3": "Fecha de registro",
+        "column4": "Fecha de cobro",
+        "column5": "Estado",
+        "column6": "Cliente"
+    },
+    {
+        "id": "CXP",
+        "pageName": "Detalle de Engresos del mes",
+        "column1": "Descripción",
+        "column2": "Monto",
+        "column3": "Fecha de registro",
+        "column4": "Fecha de pago",
+        "column5": "Estado",
+        "column6": "Cliente"
+    },
+    {
+        "id": "Payroll",
+        "pageName": "Detalle de Engresos del mes",
+        "column1": "Colaborador",
+        "column2": "Fecha",
+        "column3": "Monto"
+    }
+    
+]
